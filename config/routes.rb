@@ -1,21 +1,20 @@
 Mmw::Application.routes.draw do
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
-  get "admins/index"
-  get "admins/new"
-  get "admins/create"
-  get "admins/show"
-  get "searches/index"
-  get "searches/new"
-  get "searches/create"
-  get "searches/update"
-  get "searches/show"
+  
+  resources :searches do
+  resources :terms
+end
+
+  resources :admins
+  resource :sessions, only: [:new, :create, :destroy]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+  root 'searches#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
