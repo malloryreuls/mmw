@@ -18,6 +18,12 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+group :test do 
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
