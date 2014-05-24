@@ -49,3 +49,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'httparty'
+gem 'freebase-api'
+gem 'addressable'

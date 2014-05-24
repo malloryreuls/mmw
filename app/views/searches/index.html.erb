@@ -1,5 +1,9 @@
-<h1>Searches#index</h1>
+<h1>Mulitmedia Wikipedia</h1>
 
-Blah blah blah
+<%= form_tag searches_path, :method => 'get' do %>
+<%= text_field_tag :freeb, params[:freeb] %>
+<%= submit_tag "SEARCH", :name => nil %>
+<% end %>
 
-alsjbaslkdjbasldkbasdlkjsblj
+<%= @freeb%>
+
