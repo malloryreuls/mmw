@@ -3,7 +3,7 @@ class Search < ActiveRecord::Base
 	has_many :terms
 
 	def self.results(freeb)
-
+		freeb ||= "matrix"
 	  results = FreebaseAPI::Topic.search(freeb)
 	  best_match = results.values.first
 	  best_match.sync
