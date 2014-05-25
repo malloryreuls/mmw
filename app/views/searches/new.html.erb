@@ -2,6 +2,7 @@
 <p>Find me in app/views/searches/new.html.erb</p>
 
 
-<div>
-Enter your search here!
-</div>
+<%= form_tag searches_path, :method => 'get' do %>
+<%= text_field_tag :freeb, params[:freeb] %>
+<%= submit_tag "SEARCH", :name => nil %>
+<% end %>

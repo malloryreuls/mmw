@@ -3,9 +3,12 @@ class SearchesController < ApplicationController
   def index
 # calls the results method/action in our search model using the freeb param that gets passed
     @freeb = Search.results(params[:freeb])
+    @imageview=Search.imageview(@freeb)
+   
   end
 
   def new
+   
   end
 
   def create
@@ -20,5 +23,6 @@ class SearchesController < ApplicationController
     # starts a new freebase session with our API key
     def freebase_init
     FreebaseAPI.session = FreebaseAPI::Session.new(key: 'AIzaSyAEMMKQwxVCAV8CiCPII_AZwPo7PTwjGGE', env: :stable)
+    
     end
 end
