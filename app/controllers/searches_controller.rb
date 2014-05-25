@@ -3,12 +3,13 @@ class SearchesController < ApplicationController
   def index
 # calls the results method/action in our search model using the freeb param that gets passed
     @freeb = Search.results(params[:freeb])
-    @imageview=Search.imageview(@freeb)
-   
+    image_results=Search.imageview(@freeb.id)
+    @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
+    
   end
 
   def new
-   
+
   end
 
   def create

@@ -15,10 +15,9 @@ class Search < ActiveRecord::Base
 	
 	end
 
-	def self.imageview(imageview)
+	def self.imageview(imageview_id)
 		
-		results = FreebaseAPI.session.topic(imageview.id, filter: '/common/topic/image/')
-
+	results = FreebaseAPI.session.topic(imageview_id, filter: '/common/topic/image')
 
 	end
 end
