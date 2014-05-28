@@ -1,7 +1,7 @@
 class Search < ActiveRecord::Base
 
 	has_many :terms
-
+	validates_presence_of :query, message: "Must enter a search query"
 
 	def self.results(freeb)
 		freeb ||= "matrix"

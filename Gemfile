@@ -52,3 +52,7 @@ end
 gem 'httparty'
 gem 'freebase-api'
 gem 'addressable'
+
+group :test do
+	gem 'shoulda-matchers'
+end
