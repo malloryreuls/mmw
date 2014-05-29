@@ -1,5 +1,6 @@
 require "bcrypt"
 class Admin < ActiveRecord::Base
+	# attr_accessible :email, :password, :password_confirmation
 	has_secure_password :validations => false
 	validates_presence_of :password, :on => :create
 	validates_presence_of :email, message: "Cannot have an admin account without email"

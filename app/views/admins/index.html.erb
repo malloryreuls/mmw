@@ -1,10 +1,16 @@
 <h1>Admins#index</h1>
-<p>Find me in app/views/admins/index.html.erb</p>
 
-<div>This is a list of all of the admins. 
 
-We are working on this project at the same time, in different places.
-
-DMX just had his mind blown!!!
-
--Mallory</div>
+<% @admins.each do |a|%>
+<p><%= a.email%></p>
+<p><%= a.password_digest%></p>
+<%end%>
+<ul>
+        <% if !current_admin %>
+          <li><%= link_to "Sign Up", new_admin_path %></li>
+          <li><%= link_to "Sign In", new_sessions_path %></li>
+        <% else %>
+          <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
+          
+        <% end %>
+      </ul>
