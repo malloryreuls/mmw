@@ -13,6 +13,9 @@
   <% end %>
 </div>
   <div class="medium-6 columns"><%= @freeb.description %></div>
+  	<% for youtube in @youtube %>
+  <div class="medium-3 columns"><iframe src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0"></iframe>    
+  	<% end %>
+  </div>
 
-  <div class="medium-3 columns"><iframe src='<%= "http://www.youtube.com/embed/#{@youtube}" %>' frameborder="0"></iframe></div>
 </div>

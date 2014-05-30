@@ -22,6 +22,6 @@ class Search < ActiveRecord::Base
 	end
 
 	def self.youtube(freeb)
-		YoutubeSearch.search(freeb).first["video_id"]
+		YoutubeSearch.search(freeb).map { |value| value["video_id"] }.take(5)
 	end
 end
