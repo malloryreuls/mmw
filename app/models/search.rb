@@ -20,4 +20,8 @@ class Search < ActiveRecord::Base
 	results = FreebaseAPI.session.topic(imageview_id, filter: '/common/topic/image')
 
 	end
+
+	def self.youtube(freeb)
+		YoutubeSearch.search(freeb).first["video_id"]
+	end
 end

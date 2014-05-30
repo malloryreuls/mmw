@@ -52,6 +52,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 gem 'freebase-api'
 gem 'addressable'
+gem 'simple_youtube'
+gem 'youtube_search'
+
+gem "figaro"
 
 group :test do
 	gem 'shoulda-matchers'

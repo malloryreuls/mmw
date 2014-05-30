@@ -8,12 +8,16 @@
 <h1><%= @freeb.name%></h1>
 
 <% for image in @images %>
-<img src='<%="https://usercontent.googleapis.com/freebase/v1/image/" + image%>'>
+<% @images.each do |image| %>
+
+<img src='<%= "https://usercontent.googleapis.com/freebase/v1/image/#{image}" %>'>
 <% end %>
+
+<iframe width="250" height="250" src='<%= "http://www.youtube.com/embed/#{@youtube}" %>' frameborder="0"></iframe>
+
+<%= @youtube %>
+
 
 </br>
 
-<%= @freeb.description%>
-
-
-
+<%= @freeb.description %>
