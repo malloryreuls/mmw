@@ -1,6 +1,6 @@
 <h1>Mulitmedia Wikipedia</h1>
 
-<%= form_tag searches_path, :method => 'get' do %>
-<%= text_field_tag :freeb, params[:freeb], class:"small-6 columns" %>
-<%= submit_tag "SEARCH", :name => nil, class:"button postfix" %>
+<%= form_tag searches_path, :method => 'post' do %>
+<%= text_field_tag :query, params[:query], class:"small-6 columns" %>
+<%= submit_tag "SEARCH", class:"button postfix" %>
 <% end %>

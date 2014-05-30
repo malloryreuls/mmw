@@ -1,9 +1,9 @@
-require 'spec_helper'
+ require 'spec_helper'
 
 describe AdminsController do
 
-	let(:valid_attributes) {{ :email => "test@test.com", 
-		:password_digest => "12345"}}
+	let(:valid_attributes) {{ :email => "test@test.com",
+		:password => "12345"}}
 
 	describe "GET 'index'" do
 		it "returns http success" do
@@ -62,7 +62,7 @@ describe AdminsController do
 
 	describe "GET show" do
 			it "should have 200 status code" do
-			admin2 = Admin.create!(email: "boo@boo.com", password_digest: "12345")
+			admin2 = Admin.create!(email: "boo@boo.com", password: "12345")
 			get :show, id: admin2.id
 			expect(response.status).to eq(200)
 			expect(assigns(:admin)).to eq(admin2)
