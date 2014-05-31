@@ -1,6 +1,3 @@
 <h1>Mulitmedia Wikipedia</h1>
 
-<%= form_tag searches_path, :method => 'post' do %>
-<%= text_field_tag :query, params[:query], class:"small-6 columns" %>
-<%= submit_tag "SEARCH", class:"button postfix" %>
-<% end %>
+<%= render partial: 'form' %>
