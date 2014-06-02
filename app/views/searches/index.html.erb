@@ -4,10 +4,15 @@
 
 <h1><%= @query.name%></h1>
 
-
+<div>
+    <% for history in @history %>
+    <p><%= history['query'] %> was searched at </p>
+    <%= history['created_at'] %>
+    <%end%>
+  </div>
 
 <div class="row">
-	
+
   	<div class="medium-3 columns">
   	<% for image in @images %>
   	<img src='<%= "https://usercontent.googleapis.com/freebase/v1/image/#{image}" %>'>
@@ -20,4 +25,6 @@
   	<% end %>
   </div>
 
+
 </div>
+

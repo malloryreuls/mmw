@@ -11,6 +11,13 @@
           <li><%= link_to "Sign In", new_sessions_path %></li>
         <% else %>
           <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
-          
+
         <% end %>
       </ul>
+
+<div>
+    <% for history in @history %>
+    <p><%= history['query'] %> was searched at </p>
+    <%= history['created_at'] %>
+    <%end%>
+  </div>

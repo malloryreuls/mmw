@@ -1,7 +1,8 @@
 class AdminsController < ApplicationController
- 
+
   def index
   	@admins = Admin.all
+    @history = Search.all
   end
 
   def new

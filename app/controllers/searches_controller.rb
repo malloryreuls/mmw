@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
 
     # Creates an array of all the image ids associated with that Object that was searched
     @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
-    
+
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
 
@@ -30,7 +30,7 @@ class SearchesController < ApplicationController
     @search = Search.new(query_params)
       @search.save
       redirect_to searches_path
-   
+
   end
 
   def update
