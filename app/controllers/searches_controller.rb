@@ -1,6 +1,8 @@
 class SearchesController < ApplicationController
     before_action :freebase_init
 
+    respond_to :json, :html
+
   def index
     # Grabs the last "query" key from the Freebase object array of Search.last
     @last_search = Search.last["query"]
@@ -19,6 +21,9 @@ class SearchesController < ApplicationController
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
 
+    @histories = Search.all
+      respond_with @histories
+
   end
 
   def new
@@ -28,16 +33,25 @@ class SearchesController < ApplicationController
   def create
     # Creates a new search with the field query in our database
     @search = Search.new(query_params)
-      @search.save
-      redirect_to searches_path
-
+    if @search.save
+      respond_to do |format|
+        format.html {redirect_to searches_path}
+        format.json {render json: @search, status: :created}
+      end
+    else
+      respond_to do |format|
+        format.html {render 'new'}
+        format.json {render json: @search.errors, status: :unprocessable_entity}
+      end
+    end
   end
 
   def update
   end
 
   def show
-
+    @search = Search.find(params[:id])
+    respond_with @search
   end
 
     private

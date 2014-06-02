@@ -20,7 +20,7 @@ class Search < ActiveRecord::Base
 
 	def self.imageview(imageview_id)
 		# with the @query id, we filter down the object to the common/topic/image section
-	results = FreebaseAPI.session.topic(imageview_id, filter: '/common/topic/image')
+		results = FreebaseAPI.session.topic(imageview_id, filter: '/common/topic/image')
 
 	end
 

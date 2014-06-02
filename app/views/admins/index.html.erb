@@ -16,8 +16,27 @@
       </ul>
 
 <div>
-    <% for history in @history %>
+    <% for history in @histories %>
     <p><%= history['query'] %> was searched at </p>
     <%= history['created_at'] %>
     <%end%>
   </div>
+
+
+<div class="main">
+
+  <div id="searches-destination"></div>
+
+</div>
+
+<script id="searches-template" type="text/x-handlebars-template">
+    {{#each searches}}
+
+    <p>Query: {{query}} Created at: {{created_at}}</p>
+
+
+    {{/each}}
+</script>
+
+
+<script>$(function() { loadSearches(); }); </script>
