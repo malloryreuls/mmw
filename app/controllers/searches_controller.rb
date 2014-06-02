@@ -19,6 +19,8 @@ class SearchesController < ApplicationController
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
 
+    @history = Search.all
+
   end
 
   def new
