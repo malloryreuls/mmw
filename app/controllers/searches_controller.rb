@@ -15,8 +15,7 @@ class SearchesController < ApplicationController
     # Calls the imageview method on the users search(@query) with the freebase id
     image_results = Search.imageview(@query.id)
     if image_results["property"] == nil
-      image_results = Search.imageview('/m/01vvzb1')
-      @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
+      @images = nil
 
     else
     # Creates an array of all the image ids associated with that Object that was searched
