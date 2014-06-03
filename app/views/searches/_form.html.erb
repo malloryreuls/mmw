@@ -1,4 +1,6 @@
 <%= form_for @search do |f| %>
+<div class="search_bar">
+
 
 </br>
  <%= f.text_field :query %>
@@ -6,7 +8,10 @@
 </br>
 
 
-<%= f.submit "Create a new Search"%>
+<%= f.submit "Search", :style => "visibility: hidden"%>
 
 
 <%end%>
+
+
+</div>
