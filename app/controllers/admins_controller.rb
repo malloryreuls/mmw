@@ -5,6 +5,8 @@ class AdminsController < ApplicationController
   def index
   	@admins = Admin.all
     @histories = Search.all
+    @recent_histories = Search.order('created_at DESC').limit(25)
+    # @recent_histories = Search.find( :all, :order => "created_at DESC" , :limit => 25)
   end
 
   def new

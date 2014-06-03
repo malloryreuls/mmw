@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
   before_action :freebase_init
-
   respond_to :json, :html
 
   def index
@@ -8,25 +7,20 @@ class SearchesController < ApplicationController
     @last_search = Search.last["query"]
     # Runs the results method on the @last_search query
     @query = Search.results(@last_search)
-
     # Allows us to render the new search form on Search index
     @search = Search.new
-
     # Calls the imageview method on the users search(@query) with the freebase id
     image_results = Search.imageview(@query.id)
     if image_results["property"] == nil
       @images = nil
-
     else
-    # Creates an array of all the image ids associated with that Object that was searched
-    @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
+      # Creates an array of all the image ids associated with that Object that was searched
+      @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
     end
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
-
     @histories = Search.all
     respond_with @histories
-
   end
 
   def new
