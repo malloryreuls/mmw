@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
-    before_action :freebase_init
+  before_action :freebase_init
 
-    respond_to :json, :html
+  respond_to :json, :html
 
   def index
     # Grabs the last "query" key from the Freebase object array of Search.last
@@ -13,16 +13,20 @@ class SearchesController < ApplicationController
     @search = Search.new
 
     # Calls the imageview method on the users search(@query) with the freebase id
-    image_results=Search.imageview(@query.id)
+    image_results = Search.imageview(@query.id)
+    if image_results["property"] == nil
+      image_results = Search.imageview('/m/01vvzb1')
+      @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
 
+    else
     # Creates an array of all the image ids associated with that Object that was searched
     @images = image_results["property"]["/common/topic/image"]["values"].map { |value| value["id"] }
-
+    end
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
 
     @histories = Search.all
-      respond_with @histories
+    respond_with @histories
 
   end
 
@@ -54,13 +58,13 @@ class SearchesController < ApplicationController
     respond_with @search
   end
 
-    private
+  private
     # starts a new freebase session with our API key
     def freebase_init
-    FreebaseAPI.session = FreebaseAPI::Session.new(key: ENV['FREEBASE_API'], env: :stable)
+      FreebaseAPI.session = FreebaseAPI::Session.new(key: ENV['FREEBASE_API'], env: :stable)
     end
 
     def query_params
       params.require(:search).permit(:query)
     end
-end
+  end
