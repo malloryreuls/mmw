@@ -3,12 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background-image: url('linedpaper.jpg');
+    background-image: url('wallpaper.jpg');
 }
-
+.dmx_logo {
+  background-image: url('logo.png');
+  width: 380px;
+  height: 400px;
+}
 .search_bar {
   margin: 0 auto;
   width: 50%;
-
+  z-index: -1;
+  margin-top: -200px;
 
 }
