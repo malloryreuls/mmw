@@ -1,4 +1,41 @@
-<h1>Searches#show</h1>
-<p>Find me in app/views/searches/show.html.erb</p> 
+  <div class="container">
+  <h1><%= @query.name%></h1>
 
-<%=@history%>
+  <%= render partial: 'form' %>
+
+  <div class="row">
+
+    <div class="large-6 columns panel" style="text-align: left">
+      <ul class=class="small-block-grid-3">
+        <li><%= @query.description %></li>
+      </ul>
+    </div>
+
+    <div class="large-6 columns">
+      <ul class="small-block-grid-3">
+        <% if @images == nil %>
+        <li><strong>Sorry, there are no images available for your search</strong></li>
+        <% else %>
+        <% for image in @images %>
+        <li><img src='<%= "https://usercontent.googleapis.com/freebase/v1/image/#{image}" %>'></li>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+<center><hr width="80%"></center>
+
+  <div class="row">
+    <div class="medium-11 medium-centered columns">
+     <ul class="small-block-grid-3">
+      <% for youtube in @youtube %>
+
+      <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0">
+      </iframe></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
+
