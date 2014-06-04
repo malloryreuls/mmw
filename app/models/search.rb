@@ -32,4 +32,5 @@ class Search < ActiveRecord::Base
 		# Grabs the first 5 ids from the results of our youtube search
 		youtube_results	=	YoutubeSearch.search(query).map { |value| value["video_id"] }.take(5)
 	end
+
 end

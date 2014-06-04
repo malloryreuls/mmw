@@ -19,6 +19,9 @@ class SearchesController < ApplicationController
     end
     # calls the youtube function on the search query
     @youtube = Search.youtube(@last_search)
+
+    @history_count = num_search_history
+    
     @histories = Search.all
     respond_with @histories
   end
@@ -60,4 +63,14 @@ class SearchesController < ApplicationController
     def query_params
       params.require(:search).permit(:query)
     end
+
+    def num_search_history
+      words = Search.all
+      # raise words.first.query.inspect
+      words_array = words.map { |w| w.query.downcase } 
+      @num_search = Hash.new(0)
+      words_array.each { |v| @num_search[v] += 1 }
+      @num_search
+    end
+
   end

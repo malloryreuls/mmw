@@ -1,11 +1,10 @@
 class AdminsController < ApplicationController
 
-
-
   def index
   	@admins = Admin.all
+    @history_count = num_search_history
     @histories = Search.all
-    @recent_histories = Search.order('created_at DESC').limit(25)
+    @recent_histories = Search.order('created_at DESC').limit(10)
     # @recent_histories = Search.find( :all, :order => "created_at DESC" , :limit => 25)
   end
 
@@ -32,5 +31,13 @@ class AdminsController < ApplicationController
   def admin_params
   	params.require(:admin).permit(:email, :password, :password_confirmation)
   end
-end
 
+  def num_search_history
+    words = Search.all
+    words_array = words.map { |w| w.query.downcase } 
+    @num_search = Hash.new(0)
+    words_array.each { |v| @num_search[v] += 1 }
+    @num_search.sort_by{ |k, v| -v}
+  end
+
+end

@@ -1,11 +1,29 @@
 <div class="container">
-<h1>Most recent Search Queries</h1>
+
+<h3>Most Frequent Search Queries</h3>
 
 <table>
   <thead>
     <tr>
+      <th width="200">Query Name</th>
+      <th>Count:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @history_count.each do |key, value| %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= value %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Most Recent Search Queries</h3>
+<table>
+  <thead>
+    <tr>
       <th width="200">Search Query:</th>
-      <th>Created At:</th>
       <th>Date:</th>
       <th>Time:</th>
     </tr>
@@ -14,9 +32,8 @@
     <% for history in @recent_histories %>
     <tr>
       <td><%= history['query'] %></td>
-      <td><%= history['created_at'] %></td>
-<td><%= history.created_at.strftime("%d %b. %Y") %></td>
-<td><%= history.created_at.strftime("%H:%M") %></td>
+      <td><%= history.created_at.strftime("%d %b. %Y") %></td>
+      <td><%= history.created_at.strftime("%H:%M") %></td>
     </tr>
      <%end%>
   </tbody>
