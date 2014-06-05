@@ -33,4 +33,17 @@ class Search < ActiveRecord::Base
 		youtube_results	=	YoutubeSearch.search(query).map { |value| value["video_id"] }.take(3)
 	end
 
+	def self.google_image(query)
+		result = GoogleImageApi.find( query, {
+	    :imgsz => "medium",
+	    :rsz => 8,
+	    :start => 8,
+	    :imgtype  => "face",
+	    :as_filetype => "jpg"
+	  	})
+	  	 result.images.each do |img|
+    	puts img['url']
+
+  		end
+	end
 end

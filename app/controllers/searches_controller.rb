@@ -1,9 +1,12 @@
+require 'google_image_api'
 class SearchesController < ApplicationController
   before_action :freebase_init
   before_action :set_query, only: [:show]
   respond_to :json, :html
 
   def index
+    @histories = Search.all
+    respond_with @histories
   end
 
   def new
@@ -50,11 +53,8 @@ class SearchesController < ApplicationController
         end
         # calls the youtube function on the search query
         @youtube = Search.youtube(@last_search)
+         @googleimage= Search.google_image(@last_search)
 
-        @history_count = num_search_history
-        
-        @histories = Search.all
-        respond_with @histories
       end
 
       format.json do

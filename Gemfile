@@ -56,6 +56,8 @@ gem 'freebase-api'
 gem 'addressable'
 gem 'simple_youtube'
 gem 'youtube_search'
+gem 'google_image_api'
+
 
 gem "figaro"
 

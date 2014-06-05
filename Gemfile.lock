@@ -58,6 +58,7 @@ GEM
       sass (>= 3.2.0)
     freebase-api (0.1.3)
       httparty (~> 0.10)
+    google_image_api (0.0.1)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -169,6 +170,7 @@ DEPENDENCIES
   figaro
   foundation-rails
   freebase-api
+  google_image_api
   httparty
   jbuilder (~> 1.2)
   jquery-rails
