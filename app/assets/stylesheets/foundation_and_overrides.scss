@@ -375,15 +375,15 @@
 // We use these to set the background colors for parts of Clearing.
 // $clearing-bg: #333;
 // $clearing-caption-bg: $clearing-bg;
-// $clearing-carousel-bg: rgba(51,51,51,0.8);
+$clearing-carousel-bg: rgba(51,51,51,0.8);
 // $clearing-img-bg: $clearing-bg;
 
 // We use these to style the close button
 // $clearing-close-color: #ccc;
-// $clearing-close-size: 30px;
+ $clearing-close-size: 50px;
 
 // We use these to style the arrows
-// $clearing-arrow-size: 12px;
+$clearing-arrow-size: 40px;
 // $clearing-arrow-color: $clearing-close-color;
 
 // We use these to style captions
@@ -392,10 +392,10 @@
 // $clearing-caption-padding: 10px 30px 20px;
 
 // We use these to make the image and carousel height and style
-// $clearing-active-img-height: 85%;
-// $clearing-carousel-height: 120px;
-// $clearing-carousel-thumb-width: 120px;
-// $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255);
+$clearing-active-img-height: 75%;
+$clearing-carousel-height: 150px;
+$clearing-carousel-thumb-width: 150px;
+$clearing-carousel-thumb-active-border: 2px solid rgb(255,255,255);
 
 // Dropdown
 

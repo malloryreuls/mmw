@@ -12,13 +12,13 @@
     </div>
 
     <div class="large-6 columns">
-      <ul class="small-block-grid-3">
-     
+      <ul class="clearing-thumbs" data-clearing>
+
         <% @googleimage.each do |image| %>
-      
-       	<li><img src='<%=image["unescapedUrl"]%>'></li> 
+
+       	<li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th"></li>
         <% end %>
-        
+
       </ul>
     </div>
   </div>
