@@ -7,7 +7,8 @@ end
 
   resources :admins
   resource :sessions, only: [:new, :create, :destroy]
-  resources :secret, only:[:index]
+  resources :secret, only: [:index]
+  resources :dashboard, only: [:index, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -39,7 +39,7 @@ class Search < ActiveRecord::Base
 	    :rsz => 8,
 	    :start => 8,
 	    :imgtype  => "face",
-	    :as_filetype => "jpg"
+	    :as_filetype => "png"
 	  	})
 	  	 result.images.each do |img|
     	puts img['url']

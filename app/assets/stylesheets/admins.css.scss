@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table {
- 	text-align:center;
-
+ 	text-align: center;
+ 	margin: 0 auto;
  }
+
+ .ask_dmx_logo {
+  background-image: url('logo_sm.png');
+}
