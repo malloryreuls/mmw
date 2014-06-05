@@ -1,1 +1,16 @@
 <h1>Index</h1>
+
+<% @googleimage.each do |image| %>
+      
+       <li><img src='<%=image["unescapedUrl"]%>'></li> 
+        <% end %>
+
+           <% if @images == nil %>
+        <li><strong>Sorry, there are no images available for your search</strong></li>
+        <% else %>
+        <% for image in @images %>
+        <li><img src='<%= "https://usercontent.googleapis.com/freebase/v1/image/#{image}" %>'></li>
+        <% end %>
+        <% end %>
+
+
