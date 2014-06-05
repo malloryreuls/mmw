@@ -1,7 +1,23 @@
+<script type="text/javascript">
+function searchBarAppear(keyEvent) {
+  var searchbar = document.getElementById("searchbar");
+
+  searchbar.style.display = "block";
+  document.getElementById("searchbox").focus();
+  if (keyEvent.keyCode == 27) {
+   searchbar.style.display = "none";
+ }
+
+}
+
+window.onkeydown = searchBarAppear;
+</script>
+
 <div class="container">
   <h1><%= @query.name.upcase %></h1>
 
-  <div id="search-bar"><%= render partial: 'form' %>
+  <div style="display:none" id="searchbar">
+    <%= render partial: 'form' %>
   </div>
 
   <div class="row">
