@@ -1,61 +1,62 @@
-  <div class="container">
-  <h1><%= @query.name%></h1>
+<div class="container">
+  <h1><%= @query.name.upcase %></h1>
 
-  <%= render partial: 'form' %>
-
-  <div class="row">
-
-    <div class="large-6 columns panel" style="text-align: left">
-      <ul class=class="small-block-grid-3">
-        <li><%= @query.description %></li>
-      </ul>
-    </div>
-
-    <div class="large-6 columns">
-      <ul class="clearing-thumbs" data-clearing>
-
-        <% @googleimage.each do |image| %>
-
-       	<li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th"></li>
-        <% end %>
-
-      </ul>
-    </div>
+  <div id="search-bar"><%= render partial: 'form' %>
   </div>
-
-<center><hr width="80%"></center>
 
   <div class="row">
     <div class="medium-11 medium-centered columns">
-     <ul class="small-block-grid-3">
-      <% for youtube in @youtube %>
+      <ul class="clearing-thumbs" data-clearing>
+        <% @googleimage.each do |image| %>
+        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th"></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-      <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0">
-      </iframe></li>
-      <% end %>
-    </ul>
+    <center><hr width="80%"></center>
+    <br />
+
+  <div class="row">
+    <div class="large-12 columns panel" style="text-align: justify">
+      <article>
+        <p "small-block-grid-3"><%= @query.description %></p>
+      </aritlce>
+    </div>
+  </div>
+
+  <center><hr width="80%"></center>
+
+  <div class="row">
+    <div class="medium-11 medium-centered columns">
+      <ul class="small-block-grid-3">
+        <% for youtube in @youtube %>
+        <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0"></iframe></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class= "footer">
+    <footer class="row">
+      <div class="large-12 columns"><hr/>
+        <div class="row">
+          <div class="large-6 columns">
+            <ul class="inline-list center" >
+              <li>© MMW</li>
+            </ul>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="/searches/new">Ask DMX</a></li>
+              <li><a href="/admins">Analytics Dashboard</a></li>
+              <li><a href="https://github.com/malloryreuls/mmw">View GitHub Repo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </div>
 
-    <div class= "footer">
-    <footer class="row">
-    <div class="large-12 columns"><hr/>
-      <div class="row">
-        <div class="large-6 columns">
-          <ul class="inline-list center" >
-            <li>© MMW</li>
-          </ul>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="/searches/new">Ask DMX</a></li>
-            <li><a href="/admins">Analytics Dashboard</a></li>
-            <li><a href="https://github.com/malloryreuls/mmw">View GitHub Repo</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-    </div>
-</div>
 
