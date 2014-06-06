@@ -47,6 +47,7 @@ class SearchesController < ApplicationController
         # calls the youtube function on the search query
         @youtube = Search.youtube(@last_search)
         @googleimage= Search.google_image(@last_search)
+        @bgimage= Search.bg_image(@last_search)
 
       end
 

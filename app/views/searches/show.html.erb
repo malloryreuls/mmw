@@ -19,30 +19,30 @@ function searchBarAppear(keyEvent) {
 window.onkeydown = searchBarAppear;
 </script>
 
-<div class="container">
-  <!-- LOGO IMAGE TOP LEFT -->
-  <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px; margin-top:20px;" %>
+  <% @bgimage.each do |image| %>
+<div id="bgimage" class="container" style="background-image:url('<%=image["unescapedUrl"]%>');">
+        <% end %>
 
 <header>
-  
+  <div class="logo"></div>
   <h1><%= @query.name.upcase %>
   </h1>
 
-  <%= form_for @search do |f| %>
+  <%#= form_for @search do |f| %>
 
-  <%= f.text_field :query, style:"width:230px; float:right; display:inline-block; margin-top:-80px; margin-right:75px;", placeholder: "Enter Search" %>
+  <%#= f.text_field :query, style:"width:230px; float:right; display:inline-block; margin-top:-80px; margin-right:75px; opacity: 0;", placeholder: "Enter Search" %>
 
 
-  <%= f.submit "Search", :style => "visibility: hidden"%>
+  <%#= f.submit "Search", :style => "visibility: hidden"%>
 
-    <%end%>
+    <%#end%>
 </header>
 
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
   </div>
-
+we
   <div class="row">
     <div class="medium-11 medium-centered columns">
       <ul class="clearing-thumbs" data-clearing>
@@ -52,6 +52,12 @@ window.onkeydown = searchBarAppear;
         </li>
         <% end %>
       </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-11 medium-centered columns">
+        
     </div>
   </div>
 

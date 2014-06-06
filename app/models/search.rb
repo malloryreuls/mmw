@@ -31,4 +31,17 @@ class Search < ActiveRecord::Base
 
 		end
 	end
+
+	def self.bg_image(query)
+		result = GoogleImageApi.find( query, {
+			:imgsz => "huge",
+			:rsz => 1,
+			:start => 1,
+			})
+		result.images.each do |img|
+			puts img['url']
+
+		end
+	end
+
 end
