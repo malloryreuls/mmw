@@ -59,13 +59,4 @@ describe AdminsController do
 		 end
 		end
 	end
-
-	describe "GET show" do
-			it "should have 200 status code" do
-			admin2 = Admin.create!(email: "boo@boo.com", password: "12345")
-			get :show, id: admin2.id
-			expect(response.status).to eq(200)
-			expect(assigns(:admin)).to eq(admin2)
-		end
-	end
 end
