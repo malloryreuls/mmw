@@ -37,23 +37,22 @@ header {
 }
 
 .th {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
-  position:relative;
+  
 }
 
-figcaption {
-    display: none;
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    right: 0;
-    background-color: rgba(0,0,0,.15);
+
+
+.row2 {
+text-align:center;
+ 
+ 
 }
-.th:hover figcaption {
-    display: block;
-}
+
+
+
 .th:hover img {
     opacity: .7;
 }
