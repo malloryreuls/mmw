@@ -23,10 +23,21 @@ window.onkeydown = searchBarAppear;
   <!-- LOGO IMAGE TOP LEFT -->
   <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px; margin-top:20px;" %>
 
-  <header>
-    <h1><%= @query.name.upcase %>
-    </h1>
-  </header>
+<header>
+  
+  <h1><%= @query.name.upcase %>
+  </h1>
+
+  <%= form_for @search do |f| %>
+
+  <%= f.text_field :query, style:"width:230px; float:right; display:inline-block; margin-top:-80px; margin-right:75px;", placeholder: "Enter Search" %>
+
+
+  <%= f.submit "Search", :style => "visibility: hidden"%>
+
+    <%end%>
+</header>
+
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
@@ -62,10 +73,15 @@ window.onkeydown = searchBarAppear;
     <div class="medium-11 medium-centered columns">
 
       <ul class="small-block-grid-3">
+
         <% for youtube in @youtube %>
-        <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen></iframe></li>
+          <li>
+            <iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' allowFullScreen frameborder="0">
+            </iframe>
+          </li>
         <% end %>
       </ul>
+      
     </div>
   </div>
 
