@@ -1,13 +1,9 @@
 Mmw::Application.routes.draw do
   
-  get "secret/index"
-  resources :searches do
-  resources :terms
-end
-
+ 
+  resources :searches 
   resources :admins
   resource :sessions, only: [:new, :create, :destroy]
-  resources :secret, only: [:index]
   resources :dashboard, only: [:index, :show]
 
 

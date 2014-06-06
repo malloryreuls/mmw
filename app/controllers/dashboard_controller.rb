@@ -4,10 +4,6 @@ class DashboardController < ApplicationController
     @histories = Search.all
   end
 
-  def show
-  	@admin = Admin.find(params[:id])
-  	@admins = Admin.all
-  end
 
   protected
 
