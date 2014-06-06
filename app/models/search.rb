@@ -1,6 +1,6 @@
 class Search < ActiveRecord::Base
 
-	validates_presence_of :query, 
+	validates_presence_of :query,
 	message: "Must enter a search query"
 
 	def self.results(query)

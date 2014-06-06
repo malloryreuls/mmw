@@ -12,19 +12,4 @@ describe SearchesController do
       expect(query.name).to eq("Boat")
     end
   end
-
-  describe 'POST create' do
-    describe 'sucessful create' do
-      it "should save a new query to the database" do
-        expect{POST :create, :query => "boat"}.to change(Search, :count).by(1)
-      end
-    end
-  end
-
-
-
-
-
-
-
 end
