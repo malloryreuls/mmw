@@ -51,6 +51,17 @@ figcaption {
   width: 380px;
   height: 400px;
   margin-top: 10%;
+  margin-left:-44%;
+  display:inline-block;
+}
+
+.bubble {
+  background-image:url('bubble.png');
+  width: 600px;
+  height: 400px;
+  position:absolute;
+  display:inline-block;
+  margin-left:20px;
 }
 
 #searchbox {

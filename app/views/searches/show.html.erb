@@ -28,6 +28,14 @@ window.onkeydown = searchBarAppear;
   <h1><%= @query.name.upcase %>
   </h1>
 
+  <%= form_for @search do |f| %>
+
+  <%= f.text_field :query, style:"width:230px; float:right; display:inline-block; margin-top:-80px; margin-right:75px;", placeholder: "Enter Search" %>
+
+
+  <%= f.submit "Search", :style => "visibility: hidden"%>
+
+    <%end%>
 </header>
 
 
@@ -67,7 +75,10 @@ window.onkeydown = searchBarAppear;
       <ul class="small-block-grid-3">
 
         <% for youtube in @youtube %>
-        
+          <li>
+            <iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' allowFullScreen frameborder="0">
+            </iframe>
+          </li>
         <% end %>
 
       </ul>
