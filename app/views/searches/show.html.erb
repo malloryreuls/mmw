@@ -5,14 +5,14 @@ function searchBarAppear(keyEvent) {
   searchbar.style.display = "block";
   document.getElementById("searchbox").focus();
 
-    if (keyEvent.keyCode == 27) {
+  if (keyEvent.keyCode == 27) {
 
-     searchbar.style.display = "none";
-    } else if (keyEvent.keyCode == 37){
-    searchbar.style.display = "none";
-    }else if (keyEvent.keyCode == 39) {
-     searchbar.style.display = "none";
-    }
+   searchbar.style.display = "none";
+ } else if (keyEvent.keyCode == 37){
+  searchbar.style.display = "none";
+}else if (keyEvent.keyCode == 39) {
+ searchbar.style.display = "none";
+}
 
 }
 
@@ -20,7 +20,7 @@ window.onkeydown = searchBarAppear;
 </script>
 
 <div class="container">
-<!-- LOGO IMAGE TOP LEFT -->
+  <!-- LOGO IMAGE TOP LEFT -->
   <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px; margin-top:20px;" %>
 
 <header>
@@ -39,7 +39,6 @@ window.onkeydown = searchBarAppear;
 </header>
 
 
-
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
   </div>
@@ -49,15 +48,16 @@ window.onkeydown = searchBarAppear;
       <ul class="clearing-thumbs" data-clearing>
         <% @googleimage.each do |image| %>
         <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
-        <figcaption></figcaption>
+          <figcaption></figcaption>
         </li>
         <% end %>
       </ul>
     </div>
   </div>
 
-    <center><hr width="80%"></center>
-    <br />
+  <center><hr width="80%"></center>
+
+  <br />
 
   <div class="row">
     <div class="large-12 columns panel" style="text-align: justify">
@@ -80,25 +80,11 @@ window.onkeydown = searchBarAppear;
             </iframe>
           </li>
         <% end %>
-
       </ul>
+      
     </div>
   </div>
 
-  <div class="footer">
-    <footer>
-      <div class="medium-11 medium-centered columns"><hr/>
-            <ul class="inline-list left" >
-              <li>© MMW</li>
-            </ul>
-            <ul class="inline-list right">
-              <li><a href="/searches/new">Ask DMX</a></li>
-              <li><a href="/admins">Analytics Dashboard</a></li>
-              <li><a href="https://github.com/malloryreuls/mmw">View GitHub Repo</a></li>
-            </ul>
-          </div>
-    </footer>
-  </div>
 </div>
 
 

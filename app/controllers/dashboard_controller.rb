@@ -4,7 +4,6 @@ class DashboardController < ApplicationController
     @histories = Search.all
   end
 
-
   protected
 
 	def num_search_history
@@ -14,4 +13,5 @@ class DashboardController < ApplicationController
 		words_array.each { |v| @num_search[v] += 1 }
 		@num_search.sort_by{ |k, v| -v}
 	end
+
 end

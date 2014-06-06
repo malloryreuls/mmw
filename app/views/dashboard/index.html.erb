@@ -10,70 +10,49 @@
 
   <div class="row">    
     <div class="large-9 push-3 columns" style="margin-top: -5%">
-    <h5>Most Frequent Search Queries</h5>
-
-    <table>
-      <thead>
-        <tr>
-          <th width="200">Query Name</th>
-          <th>Count:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @history_count.each do |key, value| %>
-        <tr>
-          <td><%= key %></td>
-          <td><%= value %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+      <h5>Most Frequent Search Queries</h5>
+      <table>
+        <thead>
+          <tr>
+            <th width="200">Query Name</th>
+            <th>Count:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @history_count.each do |key, value| %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= value %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-
-
     <div class="large-3 pull-9 columns">
-
       <ul class="side-nav">
-         <li><%= link_to "Most Recent Searches", admins_path %></li>
-        <li><%= link_to "Most Frequent Searches", dashboard_index_path %></li>
-      </ul>
-    </div>
-  </div>
+       <li><%= link_to "Most Recent Searches", admins_path %></li>
+       <li><%= link_to "Most Frequent Searches", dashboard_index_path %></li>
+     </ul>
+   </div>
+ </div>
 
-  
 
-  
- <div class="footer">
-    <footer>
-      <div class="medium-11 medium-centered columns"><hr/>
-            <ul class="inline-list left" >
-              <li>© MMW</li>
-            </ul>
-            <ul class="inline-list right">
-              <li><a href="/searches/new">Ask DMX</a></li>
-              <li><a href="/admins">Analytics Dashboard</a></li>
-              <li><a href="https://github.com/malloryreuls/mmw">View GitHub Repo</a></li>
-            </ul>
-          </div>
-    </footer>
-  </div>
-  
 </div>
 
-  <div class="main">
+<div class="main">
 
-    <div id="searches-destination"></div>
+  <div id="searches-destination"></div>
 
-  </div>
+</div>
 
-  <script id="searches-template" type="text/x-handlebars-template">
-  {{#each searches}}
+<script id="searches-template" type="text/x-handlebars-template">
+{{#each searches}}
 
-  <p>Query: {{query}} Created at: {{created_at}}</p>
-
-
-  {{/each}}
-  </script>
+<p>Query: {{query}} Created at: {{created_at}}</p>
 
 
-  <script>$(function() { loadSearches(); }); </script>
+{{/each}}
+</script>
+
+
+<script>$(function() { loadSearches(); }); </script>
