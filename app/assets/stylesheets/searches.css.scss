@@ -5,7 +5,14 @@
 body {
     background-image: url('paper.jpg');
 }
+header {
+  background-color:#F2F2F2; 
+  margin-top:-20px; 
+  border-bottom: 1px solid lightgrey; 
+  margin-bottom:30px; 
+  padding-top:12px;
 
+}
 .th {
   width: 100px;
   height: 100px;
@@ -46,11 +53,14 @@ figcaption {
   margin-top: 10%;
 }
 
-.search_bar {
-  text-align: center;
-  margin: 0 auto;
-  width: 50%;
-  z-index: -1;
+#searchbox {
+  height:100%; 
+  width:100%; 
+  font-size:140pt; 
+  position:absolute; 
+  opacity:.8; 
+  z-index:9999; 
+  margin-top:-20px;
 }
 
 article p:first-of-type:first-letter {

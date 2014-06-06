@@ -20,11 +20,12 @@ window.onkeydown = searchBarAppear;
 </script>
 
 <div class="container">
-
+<!-- LOGO IMAGE TOP LEFT -->
   <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px; margin-top:20px;" %>
-<header style = "background-color:#F2F2F2; margin-top:-20px; border-bottom: 1px solid lightgrey; margin-bottom:30px; padding-top:12px;">
+
+<header>
   
-  <h1 style = "color:black;"><%= @query.name.upcase %>
+  <h1><%= @query.name.upcase %>
   </h1>
 
 </header>
@@ -62,10 +63,13 @@ window.onkeydown = searchBarAppear;
 
   <div class="row">
     <div class="medium-11 medium-centered columns">
+
       <ul class="small-block-grid-3">
+
         <% for youtube in @youtube %>
-        <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="1" allowFullScreen></iframe></li>
+        
         <% end %>
+
       </ul>
     </div>
   </div>
