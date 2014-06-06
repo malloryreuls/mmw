@@ -4,9 +4,15 @@ function searchBarAppear(keyEvent) {
 
   searchbar.style.display = "block";
   document.getElementById("searchbox").focus();
-  if (keyEvent.keyCode == 27) {
-   searchbar.style.display = "none";
- }
+
+    if (keyEvent.keyCode == 27) {
+     searchbar.style.display = "none";
+    } else if (keyEvent.keyCode == 37){
+    searchbar.style.display = "none";
+    }else if (keyEvent.keyCode == 39) {
+     searchbar.style.display = "none";
+    }
+
 
 }
 
@@ -14,7 +20,16 @@ window.onkeydown = searchBarAppear;
 </script>
 
 <div class="container">
-  <h1><%= @query.name.upcase %></h1>
+
+  <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px;" %>
+<header style = "background-color:#F2F2F2; margin-top:-20px; border-bottom: 1px solid lightgrey; margin-bottom:30px;">
+  
+  <h1 style = "color:black;"><%= @query.name.upcase %>
+  </h1>
+
+</header>
+
+
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
@@ -24,7 +39,9 @@ window.onkeydown = searchBarAppear;
     <div class="medium-11 medium-centered columns">
       <ul class="clearing-thumbs" data-clearing>
         <% @googleimage.each do |image| %>
-        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th"></li>
+        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
+        <figcaption></figcaption>
+        </li>
         <% end %>
       </ul>
     </div>
