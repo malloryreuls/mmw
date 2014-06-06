@@ -16,6 +16,23 @@ function searchBarAppear(keyEvent) {
 
 }
 
+var videobutton = document.getElementById("videoButton");
+
+function videosAppear(){
+   var videos = document.getElementById("videoblock");
+ var images = document.getElementById("imageblock");
+ images.style.display="none";
+  videos.style.display = "block";
+
+}
+function imagesAppear(){
+   var videos = document.getElementById("videoblock");
+ var images = document.getElementById("imageblock");
+ images.style.display="block";
+  videos.style.display = "none";
+
+}
+
 window.onkeydown = searchBarAppear;
 </script>
 
@@ -32,20 +49,6 @@ window.onkeydown = searchBarAppear;
     <%= render partial: 'form' %>
   </div>
 
-  <div class="row">
-    <div class="medium-11 medium-centered columns">
-      <ul class="clearing-thumbs" data-clearing>
-        <% @googleimage.each do |image| %>
-        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
-          <figcaption></figcaption>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <center><hr width="80%"></center>
-
   <br />
 
   <div class="row">
@@ -58,12 +61,33 @@ window.onkeydown = searchBarAppear;
 
   <center><hr width="80%"></center>
 
-  <div class="row">
-    <div class="medium-11 medium-centered columns">
+<button id="videoButton" onclick="videosAppear()">VIDEOS </button>
+<button id="imageButton" onclick="imagesAppear()">IMAGES </button>
 
-      <ul class="small-block-grid-3">
+    <div class="row2" id ="imageblock" style = "display: none;">
+
+    <div class="medium-10 medium-centered columns">
+
+      <ul class="clearing-thumbs" data-clearing>
+        <% @googleimage.each do |image| %>
+        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
+          
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <center><hr width="80%"></center>
+
+  <div class="row2" id ="videoblock" style = "display: none;">
+    <div class="medium-10 medium-centered columns">
+
+      <ul class="clearing-thumbs" data-clearing>
+        
         <% for youtube in @youtube %>
-        <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen></iframe></li>
+        <li ><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen></iframe></li>
+
         <% end %>
       </ul>
     </div>
