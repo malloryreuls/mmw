@@ -5,14 +5,14 @@ function searchBarAppear(keyEvent) {
   searchbar.style.display = "block";
   document.getElementById("searchbox").focus();
 
-    if (keyEvent.keyCode == 27) {
+  if (keyEvent.keyCode == 27) {
 
-     searchbar.style.display = "none";
-    } else if (keyEvent.keyCode == 37){
-    searchbar.style.display = "none";
-    }else if (keyEvent.keyCode == 39) {
-     searchbar.style.display = "none";
-    }
+   searchbar.style.display = "none";
+ } else if (keyEvent.keyCode == 37){
+  searchbar.style.display = "none";
+}else if (keyEvent.keyCode == 39) {
+ searchbar.style.display = "none";
+}
 
 }
 
@@ -20,17 +20,13 @@ window.onkeydown = searchBarAppear;
 </script>
 
 <div class="container">
-<!-- LOGO IMAGE TOP LEFT -->
+  <!-- LOGO IMAGE TOP LEFT -->
   <%= image_tag "logo_sm.png", style:"display:inline; float:left; margin-right:-300px; margin-top:20px;" %>
 
-<header>
-  
-  <h1><%= @query.name.upcase %>
-  </h1>
-
-</header>
-
-
+  <header>
+    <h1><%= @query.name.upcase %>
+    </h1>
+  </header>
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
@@ -41,15 +37,16 @@ window.onkeydown = searchBarAppear;
       <ul class="clearing-thumbs" data-clearing>
         <% @googleimage.each do |image| %>
         <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
-        <figcaption></figcaption>
+          <figcaption></figcaption>
         </li>
         <% end %>
       </ul>
     </div>
   </div>
 
-    <center><hr width="80%"></center>
-    <br />
+  <center><hr width="80%"></center>
+
+  <br />
 
   <div class="row">
     <div class="large-12 columns panel" style="text-align: justify">
@@ -65,11 +62,9 @@ window.onkeydown = searchBarAppear;
     <div class="medium-11 medium-centered columns">
 
       <ul class="small-block-grid-3">
-
         <% for youtube in @youtube %>
         <li><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen></iframe></li>
         <% end %>
-
       </ul>
     </div>
   </div>

@@ -18,15 +18,15 @@ class AdminsController < ApplicationController
       redirect_to admins_path
     else
       render 'new'
-  	end
+    end
   end
 
-  def show
-  	@admin = Admin.find(params[:id])
+  # def show
+  # 	@admin = Admin.find(params[:id])
 
-  end
+  # end
 
- protected
+  protected
 
   def admin_params
   	params.require(:admin).permit(:email, :password, :password_confirmation)

@@ -1,5 +1,6 @@
 <div class="container">   
 
+
   <div class="row">
     <div class="large-3 columns">
       <div style="margin-top: 15%">
@@ -33,7 +34,6 @@
 
 
     <div class="large-3 pull-9 columns">
-
       <ul class="side-nav">
         <li><%= link_to "Most Recent Searches", admins_path %></li>
         <li><%= link_to "Most Frequent Searches", dashboard_index_path %></li>
@@ -44,20 +44,20 @@
   
 </div>
 
-  <div class="main">
+<div class="main">
 
-    <div id="searches-destination"></div>
+  <div id="searches-destination"></div>
 
-  </div>
+</div>
 
-  <script id="searches-template" type="text/x-handlebars-template">
-  {{#each searches}}
+<script id="searches-template" type="text/x-handlebars-template">
+{{#each searches}}
 
-  <p>Query: {{query}} Created at: {{created_at}}</p>
-
-
-  {{/each}}
-  </script>
+<p>Query: {{query}} Created at: {{created_at}}</p>
 
 
-  <script>$(function() { loadSearches(); }); </script>
+{{/each}}
+</script>
+
+
+<script>$(function() { loadSearches(); }); </script>
