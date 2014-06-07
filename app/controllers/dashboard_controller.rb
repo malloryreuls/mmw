@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
 
 	def num_search_history
 		words = Search.all
-		words_array = words.map { |w| w.query.downcase } 
+		words_array = words.map { |w| w.query.downcase }
 		@num_search = Hash.new(0)
 		words_array.each { |v| @num_search[v] += 1 }
 		@num_search.sort_by{ |k, v| -v}
