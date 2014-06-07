@@ -37,6 +37,7 @@ window.onkeydown = searchBarAppear;
 </script>
 
   <% @bgimage.each do |image| %>
+
 <div id="bgimage" class="container" style="background-image:url('<%=image["unescapedUrl"]%>');">
         <% end %>
 
@@ -62,49 +63,48 @@ window.onkeydown = searchBarAppear;
 
   <br />
 
-  <div class="row">
-    <div class="large-12 columns panel" style="text-align: justify">
+<div class="row">
+    <div class="large-12 columns panel" style="text-align: justify; opacity:.94;">
       <article>
         <p "small-block-grid-3"><%= @query.description %></p>
       </aritlce>
     </div>
-  </div>
+</div>
 
   <center><hr width="80%"></center>
 
-<button id="videoButton" onclick="videosAppear()">VIDEOS </button>
-<button id="imageButton" onclick="imagesAppear()">IMAGES </button>
+<button id="videoButton" onclick="videosAppear()"><strong>VIDEOS</strong> </button>
+<button id="imageButton" onclick="imagesAppear()"><strong>IMAGES</strong> </button>
 
-    <div class="row2" id ="imageblock" style = "display: none;">
-
-    <div class="medium-10 medium-centered columns">
-
-
-      <ul class="clearing-thumbs" data-clearing>
-        <% @googleimage.each do |image| %>
-        <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
-          
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <center><hr width="80%"></center>
-
-  <div class="row2" id ="videoblock" style = "display: none;">
-    <div class="medium-10 medium-centered columns">
-
-      <ul class="clearing-thumbs" data-clearing>
-        
-        <% for youtube in @youtube %>
-        <li ><iframe width="250px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen></iframe></li>
-
-        <% end %>
-      </ul>
-      
-    </div>
-  </div>
+<div class="contentBlock" style="margin:0 auto;"> 
+    <div class="row2" id ="imageblock" style = "display: block;">
+      <div class="medium-8 medium-centered columns" >
+   
+   
+         <ul class="clearing-thumbs" data-clearing>
+           <% @googleimage.each do |image| %>
+           <li class="th" ><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
+             
+           </li>
+           <% end %>
+         </ul>
+       </div>
+     </div>
+   
+     <div class="row2" id ="videoblock" style = "display: none;">
+       <div class="medium-8 medium-centered columns" style="text-align:center;">
+   
+         <ul class="clearing-thumbs" data-clearing>
+           
+           <% for youtube in @youtube %>
+           <li class ="th" ><iframe width:"300" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe></li>
+   
+           <% end %>
+         </ul>
+         
+       </div>
+     </div>
+</div>
 
 </div>
 

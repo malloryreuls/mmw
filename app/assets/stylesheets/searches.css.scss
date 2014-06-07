@@ -37,12 +37,17 @@ header {
 }
 
 .th {
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 230px;
   overflow: hidden;
+  margin-bottom:10px;
   
 }
-
+.th iframe{
+  width:100%;
+  height: 100%;
+ 
+}
 
 
 .row2 {
@@ -102,4 +107,30 @@ article p:first-of-type:first-letter {
   line-height: 1;
   color: red;
   margin: -.05em .08em 0 .05em;
+}
+
+#videoButton {
+  background-color:rgba(255, 255, 255, .4);
+  opacity: .75;
+  color:black;
+  border-radius:20px;
+}
+
+#imageButton {
+  background-color:rgba(255, 255, 255, .4);
+  opacity: .75;
+  color:black;
+  border-radius:20px;
+}
+
+#imageButton:hover {
+  background-color:rgba(0, 0, 0, .8);
+  color:white;
+ opacity:1; 
+}
+
+#videoButton:hover {
+  background-color:rgba(0, 0, 0, .8);
+  color:white;
+ opacity:1; 
 }
