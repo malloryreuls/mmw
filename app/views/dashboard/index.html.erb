@@ -1,4 +1,21 @@
-<div class="container">   
+<div x-ng-app="mmwApp">
+  <div x-ng-controller="SearchesCtrl">
+<div class="container">
+
+<div class="top-bar" style="padding-right: 5%;" data-topbar>
+  <section class="top-bar-section">
+    <ul class="right">
+    <div class="row collapse">
+      <div class="large-8 small-9 columns">
+        <input ng-model="searchSearch" type="text" class="form-control">
+      </div>
+      <div class="large-4 small-3 columns">
+        <a href="#" class="alert button expand">Search</a>
+      </div>
+    </div>
+    </ul>
+  </section>
+</div >
 
   <div class="row">
     <div class="large-3 columns">
@@ -8,23 +25,21 @@
     </div>
   </div>
 
-  <div class="row">    
+  <div class="row">
     <div class="large-9 push-3 columns" style="margin-top: -5%">
       <h5>Most Frequent Search Queries</h5>
       <table>
         <thead>
-          <tr>
+          <tr >
             <th width="200">Query Name</th>
-            <th>Count:</th>
+            <th>Created At:</th>
           </tr>
         </thead>
-        <tbody>
-          <% @history_count.each do |key, value| %>
-          <tr>
-            <td><%= key %></td>
-            <td><%= value %></td>
+        <tbody >
+          <tr ng-repeat="search in searches | filter:searchSearch">
+            <td>{{search.query}}</td>
+            <td>{{search.created_at}}</td>
           </tr>
-          <% end %>
         </tbody>
       </table>
     </div>
@@ -38,6 +53,7 @@
 
 
 </div>
+
 
 <div class="main">
 
@@ -55,4 +71,8 @@
 </script>
 
 
-<script>$(function() { loadSearches(); }); </script>
+
+  </div>
+</div>
+
+<!-- <script>$(function() { loadSearches(); }); </script> -->
