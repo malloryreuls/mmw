@@ -1,0 +1,2 @@
+module SearchCountsHelper
+end

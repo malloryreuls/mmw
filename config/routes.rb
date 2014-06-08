@@ -1,10 +1,13 @@
 Mmw::Application.routes.draw do
   
  
+ resources :search_counts, only: [:index]
   resources :searches 
   resources :admins
   resource :sessions, only: [:new, :create, :destroy]
   resources :dashboard, only: [:index, :show]
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
