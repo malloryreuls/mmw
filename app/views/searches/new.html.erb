@@ -13,17 +13,17 @@ function searchBarAppear(keyEvent) {
     }
 }
 
-window.onkeydown = searchBarAppear;
+window.onload = searchBarAppear;
 </script>
 
 <div class= "container">
+
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
+    <p class="helpertext">Explore Multimedia Wikipedia topics by entering a keyword</p>
   </div>
   
   <div class="dmx_logo">
   </div>
-
-  <div class ="bubble"></div>
 
 </div>

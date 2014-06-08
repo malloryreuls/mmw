@@ -41,21 +41,30 @@ window.onkeydown = searchBarAppear;
 <div id="bgimage" class="container" style="background-image:url('<%=image["unescapedUrl"]%>');">
         <% end %>
 
-<header>
-  <div class="logo"></div>
-  <h1><%= @query.name.upcase %>
-  </h1>
+<header data-topbar>
+    <div class="small-2 columns logo"></div>
+  <div class="small-8 small-centered columns">
+    <h1><%= @query.name.upcase %></h1>
+  </div>
+  <div class="small-2 columns" id="searchicon" style="margin-right: 5%;">
+       <%= form_for @search do |f| %>
+      <%= f.text_field :query, placeholder: "Enter Search" %>
+      <%= f.submit "Search", :style => "visibility: hidden"%>
+
+    <%end%>
+    </div>
 </header>
 
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
+    <p class="helpertext">Explore Multimedia Wikipedia topics by entering a keyword</p>
   </div>
 
   <br />
 
 <div class="row">
-    <div class="large-12 columns panel" style="text-align: justify; opacity:.82; border-radius: 15px;">
+    <div class="small-12 columns panel" style="text-align: justify; opacity:.82; border-radius: 15px;">
       <article>
         <p "small-block-grid-3"><%= @query.description %></p>
       </aritlce>
@@ -69,10 +78,8 @@ window.onkeydown = searchBarAppear;
 
 <div class="contentBlock" style="margin:0 auto;"> 
     <div class="row2" id ="imageblock" style = "display: block;">
-      <div class="medium-8 medium-centered columns" >
-   
-<!--    this is where we are messing up  -->
-         <ul class="clearing-thumbs small-block-grid-4" data-clearing>
+      <div class="small-8 small-centered columns" >
+         <ul class="clearing-thumbs small-8 small-centered columns" data-clearing>
            <% @googleimage.each do |image| %>
            <li id="imagethumbs" class="th"><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
              
@@ -83,9 +90,9 @@ window.onkeydown = searchBarAppear;
      </div>
    
      <div class="row2" id ="videoblock" style = "display: none; text-align:center;">
-       <div class="medium-8 medium-centered columns">
-   
-         <ul>
+       <div class="small-8 small-centered columns">
+  
+         <ul class="clearing-thumbs small-8 small-centered columns" data-clearing>
            <% for youtube in @youtube %>
            <li class ="th" ><iframe width:"300" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe></li>
    
