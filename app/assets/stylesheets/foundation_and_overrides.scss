@@ -119,20 +119,16 @@ $body-font-style: normal;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-$header-font-weight: normal;
+$header-font-weight: 600;
 $header-font-style: normal;
 // $header-font-color: #222;
-$header-line-height: 1.8;
-$header-top-margin: .95rem;
-$header-bottom-margin: .95rem;
-// $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(60);
-$h2-font-size: rem-calc(55);
-$h3-font-size: rem-calc(50);
-$h4-font-size: rem-calc(40);
-$h5-font-size: rem-calc(30);
+$h1-font-size: rem-calc(50);
+$h2-font-size: rem-calc(45);
+$h3-font-size: rem-calc(40);
+$h4-font-size: rem-calc(30);
+$h5-font-size: rem-calc(20);
 // $h6-font-size: 1rem;
 
 // These control how subheaders are styled.
