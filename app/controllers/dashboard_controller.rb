@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def index
   	@history_count = num_search_history
-    @histories = Search.all
+    @search_counts = SearchCount.find_by_sql('Select query, count(*), max(created_at) as most_recent  FROM searches GROUP BY query ORDER BY count(*) desc LIMIT 25 ;')
   end
 
   protected

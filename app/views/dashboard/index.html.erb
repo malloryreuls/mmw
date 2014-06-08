@@ -32,15 +32,22 @@
         <thead>
           <tr >
             <th width="200">Query Name</th>
-            <th>Created At:</th>
+            <th>Count</th>
+            <th>Last Time Searched</th>
           </tr>
         </thead>
+
         <tbody >
-          <tr ng-repeat="search in searches | filter:searchSearch">
-            <td>{{search.query}}</td>
-            <td>{{search.created_at}}</td>
+        <% @search_counts.each do |search| %>
+          <tr>
+            <td><%= search.query%> </td>
+            <td><%= search.count%></td>
+            <td><%= search.most_recent.to_time.strftime('%a %b %d %H:%M:%S %Z %Y')%></td>
           </tr>
+          <%end%>
         </tbody>
+
+        
       </table>
     </div>
     <div class="large-3 pull-9 columns">
