@@ -126,10 +126,10 @@ $header-font-style: normal;
 // We use these to control header font sizes
 $h1-font-size: rem-calc(50);
 $h2-font-size: rem-calc(45);
-$h3-font-size: rem-calc(40);
-$h4-font-size: rem-calc(30);
-$h5-font-size: rem-calc(20);
-// $h6-font-size: 1rem;
+$h3-font-size: rem-calc(35);
+$h4-font-size: rem-calc(22);
+$h5-font-size: rem-calc(18);
+$h6-font-size: rem-calc(12);
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
@@ -371,7 +371,8 @@ $h5-font-size: rem-calc(20);
 // We use these to set the background colors for parts of Clearing.
 // $clearing-bg: #333;
 // $clearing-caption-bg: $clearing-bg;
-$clearing-carousel-bg: rgba(51,51,51,0.8);
+$clearing-carousel-bg: rgba(51,51,51,0.9);
+$clearing-bg: rgba(51,51,51,0.3);
 // $clearing-img-bg: $clearing-bg;
 
 // We use these to style the close button
@@ -385,7 +386,7 @@ $clearing-arrow-size: 40px;
 // We use these to style captions
 // $clearing-caption-font-color: #ccc;
 // $clearing-caption-font-size: 0.875em;
-// $clearing-caption-padding: 10px 30px 20px;
+$clearing-caption-padding: 10px 30px 20px;
 
 // We use these to make the image and carousel height and style
 $clearing-active-img-height: 75%;

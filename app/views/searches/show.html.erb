@@ -41,7 +41,7 @@ window.onkeydown = searchBarAppear;
 <div id="bgimage" class="container" style="background-image:url('<%=image["unescapedUrl"]%>');">
         <% end %>
 
-<header data-topbar>
+<header data-topbar> 
     <div class="small-2 columns logo"></div>
   <div class="small-8 small-centered columns">
     <h1><%= @query.name.upcase %></h1>
@@ -79,7 +79,7 @@ window.onkeydown = searchBarAppear;
 <div class="contentBlock" style="margin:0 auto;"> 
     <div class="row2" id ="imageblock" style = "display: block;">
       <div class="small-8 small-centered columns" >
-         <ul class="clearing-thumbs small-8 small-centered columns" data-clearing>
+         <ul class="clearing-thumbs" data-clearing>
            <% @googleimage.each do |image| %>
            <li id="imagethumbs" class="th"><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
              
@@ -91,8 +91,7 @@ window.onkeydown = searchBarAppear;
    
      <div class="row2" id ="videoblock" style = "display: none; text-align:center;">
        <div class="small-8 small-centered columns">
-  
-         <ul class="clearing-thumbs small-8 small-centered columns" data-clearing>
+         <ul class="clearing-thumbs" data-clearing>
            <% for youtube in @youtube %>
            <li class ="th" ><iframe width:"300" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe></li>
    

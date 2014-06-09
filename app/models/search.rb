@@ -17,13 +17,13 @@ class Search < ActiveRecord::Base
 
 	def self.youtube(query)
 		# Grabs the first 5 ids from the results of our youtube search
-		youtube_results	= YoutubeSearch.search(query).map { |value| value["video_id"] }.take(6)
+		youtube_results	= YoutubeSearch.search(query).map { |value| value["video_id"] }.take(8)
 	end
 
 	def self.google_image(query)
 		result = GoogleImageApi.find( query, {
 			:imgsz => "medium",
-			:rsz => 6,
+			:rsz => 8,
 			:start => 1,
 			})
 		result.images.each do |img|

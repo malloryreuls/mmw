@@ -17,6 +17,7 @@ header {
   border-bottom: 1px solid lightgrey; 
   margin-bottom:30px; 
   padding-top:12px;
+  opacity: 0.82;
 }
 
 #searchicon {
@@ -76,12 +77,14 @@ text-align:center;
 }
 
 .dmx_logo {
-  background-image: url('logo.png');
+  background-image: url('logo_new.png');
+  background-repeat: no-repeat;
   width: 380px;
   height: 400px;
   float: right;
   display: inline-block;
-  margin-bottom: 50%;
+  margin-top: 12%;
+  margin-right: 8%;
 }
 
 #searchbox {
@@ -97,8 +100,9 @@ text-align:center;
 .helpertext {
   text-align: left;
   padding-left: 20px;
-  margin-top: 25%;
   font-size: 25px;
+  position: fixed;
+  bottom: 45%;
 
 }
 
