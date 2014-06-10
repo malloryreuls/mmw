@@ -1,3 +1,5 @@
-== README
+== Multimedia Wikipedia README
 
 Multimedia Wikipedia combines the Wikipedia, Google Images, and YouTube APIs. Instead of the Wikipedia API we used the Freebase search API. Check out our app for a quick view on how these API's were implemented: http://multimediawikipedia.herokuapp.com/
+
+This app also features an analytics dashboard that tracks all search history. By visiting http://multimediawikipedia.herokuapp.com/admins you have a quick view of the last 10 searches that were made. On http://multimediawikipedia.herokuapp.com/dashboard you can view the total search history and most frequent searches made.

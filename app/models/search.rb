@@ -28,7 +28,6 @@ class Search < ActiveRecord::Base
 			})
 		result.images.each do |img|
 			puts img['url']
-
 		end
 	end
 
@@ -40,7 +39,6 @@ class Search < ActiveRecord::Base
 			})
 		result.images.each do |img|
 			puts img['url']
-
 		end
 	end
 
