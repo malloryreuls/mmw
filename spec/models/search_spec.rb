@@ -34,13 +34,13 @@
 
   describe "#self.youtube" do
     it "should pull the top youtube result for DMX" do
-      expect(Search.youtube("DMX")).to eq(["DcCyv0grYAc", "ThlhSnRk21E", "thIVtEOtlWM", "9Ww-TQUeA3E", "NG_d9eesuX8", "VdrJF9et0cA", "PIZLDNQidwQ", "4klj5UWDU_0"])
+      expect(Search.youtube("DMX")).to eq(["DcCyv0grYAc", "ThlhSnRk21E", "thIVtEOtlWM", "9Ww-TQUeA3E", "NG_d9eesuX8", "VdrJF9et0cA", "4klj5UWDU_0", "PIZLDNQidwQ"])
     end
     it "should pull first video result for a query of China" do
-      expect(Search.youtube("China").first).to eq"pRo_9cIPR1M"
+      expect(Search.youtube("China").first).to eq"LYtxtdjTriY"
     end
     it "should pull last video result for a query of China" do
-      expect(Search.youtube("China").last).to eq"yIE-sjrtCVo"
+      expect(Search.youtube("China").last).to eq"DT0t4V3pjp4"
     end
   end
 
