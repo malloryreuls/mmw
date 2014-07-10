@@ -7,33 +7,91 @@ body {
 }
 
 #bgimage {
-  text-align: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  margin: 0 auto;
 }
 
 header {
   background-color:#F2F2F2;
-  border-bottom: 1px solid lightgrey; 
-  margin-bottom:30px; 
+  border-bottom: 1px solid lightgrey;  
   padding-top:12px;
   opacity: 0.82;
 }
 
-#searchicon {
+#searchfield {
   margin-top: -75px !important;
+  background-repeat: no-repeat;
+  margin-right: 5%;
+  float: right;
+}
+
+@media (max-width: 600px) {
+#searchfield {
+  display: none;
+}
+}
+#searchicon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+#searchicon {
+  padding:5px;
+  margin-top: -40px;
+  margin-right: 5%;
+  display: block;
+  float: right;
+  
+  
+
+}
+
+.button{
+ background-color: grey;
+}
 }
 
 .logo {
   background-image: url('logo_md.png');
   height: 68px;
   width: 120px;
+  background-repeat: no-repeat;
   background-size: cover;
   display: inline; 
   float:left; 
   margin-right:-300px; 
   margin-left: 10px;
 }
+
+.dmx_logo {
+  background-image: url('logo_new.png');
+  background-repeat: no-repeat;
+  width: 380px;
+  height: 400px;
+  float: right;
+  display: inline-block;
+  margin-top: 12%;
+  margin-right: 8%;
+}
+
+@media (max-width: 600px) {
+  .logo {
+  background-image: url('logo_sm.png');
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 80px;
+  height: 47px;
+}
+  .dmx_logo {
+  background-image: url('logo_new_sm.png');
+  width: 150px;
+}
+  }
 
 .th {
   text-align: center;
@@ -76,25 +134,27 @@ text-align:center;
   margin-bottom: 5px;
 }
 
-.dmx_logo {
-  background-image: url('logo_new.png');
-  background-repeat: no-repeat;
-  width: 380px;
-  height: 400px;
-  float: right;
-  display: inline-block;
-  margin-top: 12%;
-  margin-right: 8%;
-}
-
 #searchbox {
   height:100%; 
   width:100%; 
-  font-size:140pt; 
+  font-size:80pt; 
   position:absolute; 
   opacity:.8; 
   z-index:9999; 
-  margin-top:-140px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  #searchbox {
+  font-size: 30pt;
+  }
+#queryname {
+  font-size: 20pt !important;;  
+  }
 }
 
 .helpertext {
@@ -103,6 +163,7 @@ text-align:center;
   font-size: 25px;
   position: fixed;
   bottom: 45%;
+  z-index: 9999;
 
 }
 
@@ -139,3 +200,4 @@ article p:first-of-type:first-letter {
   color:white;
  opacity:1; 
 }
+

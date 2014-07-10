@@ -44,27 +44,30 @@ window.onkeydown = searchBarAppear;
 <header data-topbar> 
     <div class="small-2 columns logo"></div>
   <div class="small-8 small-centered columns">
-    <h1><%= @query.name.upcase %></h1>
+    <h1 id="queryname"><%= @query.name.upcase %></h1>
   </div>
-  <div class="small-2 columns" id="searchicon" style="margin-right: 5%;">
+  <div class="small-2 columns" id="searchicon"><a href="#" class="button tiny" style="padding:5px;">Search</a></div>
+  <div class="small-2 columns" id="searchfield">
        <%= form_for @search do |f| %>
-      <%= f.text_field :query, placeholder: "Enter Search" %>
+      
+      <%= f.text_field :query, placeholder: "Enter search..." %>
+
       <%= f.submit "Search", :style => "visibility: hidden"%>
 
     <%end%>
     </div>
+    
 </header>
 
 
   <div style="display:none" id="searchbar">
     <%= render partial: 'form' %>
-    <p class="helpertext">Explore Multimedia Wikipedia topics by entering a keyword</p>
   </div>
 
   <br />
 
 <div class="row">
-    <div class="small-12 columns panel" style="text-align: justify; opacity:.82; border-radius: 15px;">
+    <div class="small-12 columns panel" style="text-align: justify; opacity:.82; border-radius: 15px; margin-top: 30px;">
       <article>
         <p "small-block-grid-3"><%= @query.description %></p>
       </aritlce>
