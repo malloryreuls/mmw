@@ -46,7 +46,7 @@ window.onkeydown = searchBarAppear;
   <div class="small-8 small-centered columns">
     <h1 id="queryname"><%= @query.name.upcase %></h1>
   </div>
-  <div class="small-2 columns" id="searchicon"><a href="#" class="button tiny" style="padding:5px;">Search</a></div>
+  <div class="small-2 columns" id="searchicon"><a href="#" class="button tiny" style="padding:5px;" onclick="searchBarAppear(65)">Search</a></div>
   <div class="small-2 columns" id="searchfield">
        <%= form_for @search do |f| %>
       
