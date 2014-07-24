@@ -22,14 +22,14 @@ function videosAppear(){
    var videos = document.getElementById("videoblock");
  var images = document.getElementById("imageblock");
  images.style.display="none";
-  videos.style.display = "block";
+  videos.style.display="block";
 
 }
 function imagesAppear(){
    var videos = document.getElementById("videoblock");
  var images = document.getElementById("imageblock");
  images.style.display="block";
-  videos.style.display = "none";
+  videos.style.display="none";
 
 }
 
@@ -80,23 +80,22 @@ window.onkeydown = searchBarAppear;
 <button id="imageButton" onclick="imagesAppear()"><strong>IMAGES</strong> </button>
 
 <div class="contentBlock" style="margin:0 auto;"> 
-    <div class="row2" id ="imageblock" style = "display: block;">
-      <div class="small-8 small-centered columns" >
-         <ul class="clearing-thumbs" data-clearing>
+    <div class="row" id="imageblock">
+      <div class="small-12 medium-12 large-12 columns" >
+         <ul class="leftbuff clearing-thumbs" data-clearing>
            <% @googleimage.each do |image| %>
            <li id="imagethumbs" class="th"><img src='<%=image["unescapedUrl"]%>'<img data-caption= "<%= image['titleNoFormatting']%>" src="path/to/your/img-th">
-             
            </li>
            <% end %>
          </ul>
        </div>
      </div>
    
-     <div class="row2" id ="videoblock" style = "display: none; text-align:center;">
-       <div class="small-8 small-centered columns">
-         <ul class="clearing-thumbs" data-clearing>
+     <div class="row row2" id="videoblock" style = "display: none; text-align:center;">
+       <div class="small-12 medium-12 large-12 columns">
+         <ul class="leftbuff clearing-thumbs" data-clearing>
            <% for youtube in @youtube %>
-           <li class ="th" ><iframe width:"300" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe></li>
+           <li id="videothumbs" class ="th" ><iframe width:"300" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe></li>
    
            <% end %>
          </ul>

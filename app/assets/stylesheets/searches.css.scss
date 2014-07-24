@@ -6,6 +6,16 @@ body {
     background-image: url('paper.jpg');
 }
 
+.leftbuff {
+  padding-left: 3.5%;
+}
+
+@media (max-width: 600px) {
+.leftbuff {
+  padding-left: 20%;
+}
+}
+
 #bgimage {
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,9 +56,6 @@ header {
   margin-right: 5%;
   display: block;
   float: right;
-  
-  
-
 }
 
 .button{
@@ -109,11 +116,6 @@ header {
   height: 100%;
 }
 
-.row2 {
-text-align:center;
- 
-}
-
 .th:hover img {
     opacity: .7;
 }
@@ -124,6 +126,17 @@ text-align:center;
 }
 
 #imagethumbs {
+  text-align: center;
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  padding: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#videothumbs {
   text-align: center;
   margin: 0 auto;
   width: 220px;
